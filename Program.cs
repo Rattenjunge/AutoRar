@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace AutoRar
 {
@@ -9,7 +8,7 @@ namespace AutoRar
         {
             string _outputFolder = "Output";
             string _inputFolder = "Input";
-            string _password = args[0];
+            string _password = "test";
 
             string _path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
@@ -61,21 +60,27 @@ namespace AutoRar
             watcher.EnableRaisingEvents = true;
 
             Console.WriteLine("AutoRar running. Listening for new files.");
-           while(true)
-           {
-            
-           }
+            while (true)
+            {
+
+            }
         }
 
-        private static void OnChanged(object sender, FileSystemEventArgs e, string InputFolder, string OutputFolder,string _password, ref int RarIndex)
+        private static void OnChanged(object sender, FileSystemEventArgs e, string InputFolder, string OutputFolder, string _password, ref int RarIndex)
         {
             string compressedFileName = RarIndex + ".rar";
             FileInfo fileInfo = new(e.FullPath);
 
-            if (fileInfo.Extension == ".rar")
+
+            //ignore rars and directories
+            
+            if (fileInfo.Extension == ".rar" || fileInfo.Extension == "")
             {
                 return;
             }
+
+            string newFileName = String.Concat(e.Name.Where(c => !Char.IsWhiteSpace(c)));
+            File.Move(InputFolder + "/" + e.Name, InputFolder + "/" + newFileName);
 
             ProcessStartInfo startInfo = new("rar")
             {
@@ -104,5 +109,6 @@ namespace AutoRar
                 File.Move(InputFolder + "/" + compressedFileName, OutputFolder + "/" + compressedFileName);
             }
         }
+
     }
 }

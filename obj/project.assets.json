@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/rat/.nuget/packages/": {}
+    "C:\\Users\\Les-Lee\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/rat/Desktop/AutoRar/AutoRar.csproj",
+      "projectUniqueName": "C:\\Users\\Les-Lee\\Desktop\\AutoRar\\AutoRar\\AutoRar.csproj",
       "projectName": "AutoRar",
-      "projectPath": "/home/rat/Desktop/AutoRar/AutoRar.csproj",
-      "packagesPath": "/home/rat/.nuget/packages/",
-      "outputPath": "/home/rat/Desktop/AutoRar/obj/",
+      "projectPath": "C:\\Users\\Les-Lee\\Desktop\\AutoRar\\AutoRar\\AutoRar.csproj",
+      "packagesPath": "C:\\Users\\Les-Lee\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Les-Lee\\Desktop\\AutoRar\\AutoRar\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/rat/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Les-Lee\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.108/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
       }
     }
   }
