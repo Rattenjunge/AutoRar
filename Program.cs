@@ -8,7 +8,7 @@ namespace AutoRar
         {
             string _outputFolder = "Output";
             string _inputFolder = "Input";
-            string _password = "test";
+            string _password = args[0];
 
             string _path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
@@ -85,7 +85,7 @@ namespace AutoRar
             ProcessStartInfo startInfo = new("rar")
             {
                 WorkingDirectory = InputFolder,
-                Arguments = $"a {compressedFileName} {e.Name} -p{_password}"
+                Arguments = $"a {compressedFileName} {newFileName} -p{_password}"
             };
 
             Process process = Process.Start(startInfo);
