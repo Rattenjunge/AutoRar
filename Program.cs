@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
-using myoddweb.directorywatcher;
-using myoddweb.directorywatcher.interfaces;
+using BraveLantern.Swatcher;
+using BraveLantern.Swatcher.Args;
+using BraveLantern.Swatcher.Config;
 
 namespace AutoRar
 {
@@ -10,7 +11,7 @@ namespace AutoRar
         {
             string _outputFolder = "Output";
             string _inputFolder = "Input";
-            string _password = args[0];
+            string _password = "test";
 
             string _path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
@@ -23,8 +24,11 @@ namespace AutoRar
                 return;
             }
 
-            Watcher watcher = new();
-            watcher.Add(new Request(_inputFolder, false));
+            SwatcherConfig config = new(_inputFolder, WatcherChangeTypes.Created,
+            SwatcherItemTypes.File, SwatcherNotificationTypes.FileName,
+             null, false, true);
+
+            Swatcher watcher = new(config);
 
             int rarIndex;
 
@@ -52,9 +56,9 @@ namespace AutoRar
             }
 
             // Add event handlers for all events you want to handle
-            watcher.OnAddedAsync += async (s, e) =>
-             OnChanged(s, e, _inputFolder, _outputFolder,
-             _password, ref rarIndex);
+            watcher.ItemCreated += new((s, e) =>
+             OnChanged(e, _inputFolder, _outputFolder,
+             _password, ref rarIndex));
 
             // Activate the watcher
             watcher.Start();
@@ -66,20 +70,20 @@ namespace AutoRar
             }
         }
 
-        private static void OnChanged(IFileSystemEvent sender, CancellationToken e, string InputFolder, string OutputFolder, string _password, ref int RarIndex)
+        private static void OnChanged(SwatcherCreatedEventArgs e, string InputFolder, string OutputFolder, string _password, ref int RarIndex)
         {
             string compressedFileName = RarIndex + ".rar";
-            FileInfo fileInfo = new(sender.FullName);
+            FileInfo fileInfo = new(e.FullPath);
 
             //ignore rars and directories
-            
+
             if (fileInfo.Extension == ".rar" || fileInfo.Extension == "")
             {
                 return;
             }
 
-            string newFileName = String.Concat(sender.Name.Where(c => !Char.IsWhiteSpace(c)));
-            File.Move(InputFolder + "/" + sender.Name, InputFolder + "/" + newFileName);
+            string newFileName = String.Concat(e.Name.Where(c => !Char.IsWhiteSpace(c)));
+            File.Move(InputFolder + "/" + e.Name, InputFolder + "/" + newFileName);
 
             ProcessStartInfo startInfo = new("rar")
             {
