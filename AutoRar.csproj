@@ -11,6 +11,9 @@
 
   <ItemGroup>
     <PackageReference Include="Swatcher" Version="1.1.0.1" />
+    <PackageReference Include="System.Reactive.Core" Version="6.0.0" />
+    <PackageReference Include="System.Reactive.Interfaces" Version="6.0.0" />
+    <PackageReference Include="System.Reactive.Linq" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
