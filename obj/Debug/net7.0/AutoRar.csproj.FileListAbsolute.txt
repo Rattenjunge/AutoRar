@@ -3,7 +3,7 @@
 /home/rat/Desktop/AutoRar/bin/Debug/net7.0/AutoRar.runtimeconfig.json
 /home/rat/Desktop/AutoRar/bin/Debug/net7.0/AutoRar.dll
 /home/rat/Desktop/AutoRar/bin/Debug/net7.0/AutoRar.pdb
-/home/rat/Desktop/AutoRar/bin/Debug/net7.0/FileWatcher.dll
+/home/rat/Desktop/AutoRar/bin/Debug/net7.0/FileWatcherEx.dll
 /home/rat/Desktop/AutoRar/obj/Debug/net7.0/AutoRar.csproj.AssemblyReference.cache
 /home/rat/Desktop/AutoRar/obj/Debug/net7.0/AutoRar.GeneratedMSBuildEditorConfig.editorconfig
 /home/rat/Desktop/AutoRar/obj/Debug/net7.0/AutoRar.AssemblyInfoInputs.cache

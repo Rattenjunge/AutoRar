@@ -1,35 +1,34 @@
 ﻿using System.Diagnostics;
-using G2Development.FileWatcher;
+using FileWatcherEx;
 
 namespace AutoRar
 {
     class Program
     {
+        static private string currentFile;
         static public void Main(string[] args)
         {
-            string _outputFolder = "Output";
-            string _inputFolder = "Input";
-            string _password = "test";
+            string outputFolder = "Output";
+            string inputFolder = "Input";
+            string password = args[0];
 
-            string _path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-            _outputFolder = _path + "/" + _outputFolder;
-            _inputFolder = _path + "/" + _inputFolder;
+            outputFolder = path + "/" + outputFolder;
+            inputFolder = path + "/" + inputFolder;
 
-            if (!Path.Exists(_outputFolder) || !Path.Exists(_inputFolder))
+            if (!Path.Exists(outputFolder) || !Path.Exists(inputFolder))
             {
                 Console.WriteLine("ERROR: No INPUT OR OUTPUT folder found.");
                 return;
             }
 
-            FileWatcher watcher = new()
-            {
-                Path = _inputFolder
-            };
-
+             FileSystemWatcherEx watcher = new(inputFolder, (s) => Console.WriteLine(s));
+            
+            
             int rarIndex;
 
-            string[] filePaths = Directory.GetFiles(_outputFolder, "*.rar",
+            string[] filePaths = Directory.GetFiles(outputFolder, "*.rar",
                                          SearchOption.TopDirectoryOnly);
 
             if (filePaths.Length <= 0)
@@ -53,12 +52,12 @@ namespace AutoRar
             }
 
             // Add event handlers for all events you want to handle
-            watcher.Created += new((s, e) =>
-             OnChanged(e, _inputFolder, _outputFolder,
-             _password, ref rarIndex));
+            watcher.OnCreated += new((s, e) =>
+             OnChanged(e, inputFolder, outputFolder,
+             password, ref rarIndex));
 
             // Activate the watcher
-            watcher.EnableRaisingEvents = true;
+            watcher.Start();
 
             Console.WriteLine("AutoRar running. Listening for new files.");
             while (true)
@@ -67,7 +66,7 @@ namespace AutoRar
             }
         }
 
-        private static void OnChanged(FileSystemEventArgs e, string InputFolder, string OutputFolder, string _password, ref int RarIndex)
+        private static void OnChanged(FileChangedEvent e, string InputFolder, string OutputFolder, string _password, ref int RarIndex)
         {
             string compressedFileName = RarIndex + ".rar";
             FileInfo fileInfo = new(e.FullPath);
@@ -78,9 +77,17 @@ namespace AutoRar
             {
                 return;
             }
+           
+            string newFileName = String.Concat(fileInfo.Name.Where(c => !Char.IsWhiteSpace(c)));
 
-            string newFileName = String.Concat(e.Name.Where(c => !Char.IsWhiteSpace(c)));
-            File.Move(InputFolder + "/" + e.Name, InputFolder + "/" + newFileName);
+            if(currentFile == newFileName)
+            {
+                return;
+            }
+
+            currentFile = newFileName;
+
+            File.Move(InputFolder + "/" + fileInfo.Name, InputFolder + "/" + newFileName);
 
             ProcessStartInfo startInfo = new("rar")
             {
