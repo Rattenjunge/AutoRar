@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "vlUEOD02hfj9Fl7o9b6IIXATadEQxUQwkOuzBOMh2BqP0pwZJxGwh1TrQaDkUFAlh5Dn+cmY5nYQeOdC1W3onw==",
+  "dgSpecHash": "qNj7JW3sqT4Xy07YJc06CgLk7gP2yBwrtxEU7XG5tvwI9oYxQx9JDSfYoWV4J9kn4MmPrhPr+1anWaIEhK+trQ==",
   "success": true,
-  "projectFilePath": "/home/rat/Desktop/AutoRar/AutoRar.csproj",
+  "projectFilePath": "C:\\Users\\Les-Lee\\Desktop\\AutoRar\\AutoRar.csproj",
   "expectedPackageFiles": [
-    "/home/rat/.nuget/packages/myoddweb.directorywatcher/0.1.9/myoddweb.directorywatcher.0.1.9.nupkg.sha512",
-    "/home/rat/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/7.0.8/microsoft.netcore.app.runtime.linux-x64.7.0.8.nupkg.sha512",
-    "/home/rat/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/7.0.8/microsoft.aspnetcore.app.runtime.linux-x64.7.0.8.nupkg.sha512",
-    "/home/rat/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.8/microsoft.netcore.app.host.linux-x64.7.0.8.nupkg.sha512"
+    "C:\\Users\\Les-Lee\\.nuget\\packages\\myoddweb.directorywatcher\\0.1.9\\myoddweb.directorywatcher.0.1.9.nupkg.sha512",
+    "C:\\Users\\Les-Lee\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\7.0.8\\microsoft.netcore.app.runtime.linux-x64.7.0.8.nupkg.sha512",
+    "C:\\Users\\Les-Lee\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\7.0.8\\microsoft.aspnetcore.app.runtime.linux-x64.7.0.8.nupkg.sha512",
+    "C:\\Users\\Les-Lee\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\7.0.8\\microsoft.netcore.app.host.linux-x64.7.0.8.nupkg.sha512"
   ],
   "logs": []
 }

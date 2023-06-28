@@ -10,7 +10,7 @@ namespace AutoRar
         {
             string _outputFolder = "Output";
             string _inputFolder = "Input";
-            string _password = "test";
+            string _password = args[0];
 
             string _path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
