@@ -23,9 +23,9 @@ namespace AutoRar
                 return;
             }
 
-             FileSystemWatcherEx watcher = new(inputFolder, (s) => Console.WriteLine(s));
-            
-            
+            FileSystemWatcherEx watcher = new(inputFolder, (s) => Console.WriteLine(s));
+
+
             int rarIndex;
 
             string[] filePaths = Directory.GetFiles(outputFolder, "*.rar",
@@ -56,6 +56,10 @@ namespace AutoRar
              OnChanged(e, inputFolder, outputFolder,
              password, ref rarIndex));
 
+            watcher.OnChanged += new((s, e) =>
+            OnChanged(e, inputFolder, outputFolder,
+            password, ref rarIndex));
+
             // Activate the watcher
             watcher.Start();
 
@@ -77,10 +81,11 @@ namespace AutoRar
             {
                 return;
             }
-           
+
             string newFileName = String.Concat(fileInfo.Name.Where(c => !Char.IsWhiteSpace(c)));
 
-            if(currentFile == newFileName)
+            //security so we dont trigger multiple times
+            if (currentFile == newFileName)
             {
                 return;
             }
