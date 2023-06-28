@@ -1,12 +1,59 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {},
-    "net7.0/linux-x64": {}
+    "net7.0": {
+      "MyOddWeb.DirectoryWatcher/0.1.9": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/MyOddWeb.DirectoryWatcher.Interfaces.dll": {},
+          "lib/netcoreapp3.0/MyOddWeb.DirectoryWatcher.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/MyOddWeb.DirectoryWatcher.Interfaces.dll": {},
+          "lib/netcoreapp3.0/MyOddWeb.DirectoryWatcher.dll": {}
+        }
+      }
+    },
+    "net7.0/linux-x64": {
+      "MyOddWeb.DirectoryWatcher/0.1.9": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/MyOddWeb.DirectoryWatcher.Interfaces.dll": {},
+          "lib/netcoreapp3.0/MyOddWeb.DirectoryWatcher.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/MyOddWeb.DirectoryWatcher.Interfaces.dll": {},
+          "lib/netcoreapp3.0/MyOddWeb.DirectoryWatcher.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MyOddWeb.DirectoryWatcher/0.1.9": {
+      "sha512": "ZqYr4Z3kyOSXKBtB4rcdW8YEK3uJF4lgUOu3ZPtqa/9mjjNV1gbDmB09LFdcmRpYnyVkLbE6+EtkIct2N6OMdw==",
+      "type": "package",
+      "path": "myoddweb.directorywatcher/0.1.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net452/MyOddWeb.DirectoryWatcher.Interfaces.dll",
+        "lib/net452/MyOddWeb.DirectoryWatcher.dll",
+        "lib/net462/MyOddWeb.DirectoryWatcher.Interfaces.dll",
+        "lib/net462/MyOddWeb.DirectoryWatcher.dll",
+        "lib/netcoreapp3.0/MyOddWeb.DirectoryWatcher.Interfaces.dll",
+        "lib/netcoreapp3.0/MyOddWeb.DirectoryWatcher.dll",
+        "lib/netstandard2.0/MyOddWeb.DirectoryWatcher.Interfaces.dll",
+        "lib/netstandard2.0/MyOddWeb.DirectoryWatcher.dll",
+        "myoddweb.directorywatcher.0.1.9.nupkg.sha512",
+        "myoddweb.directorywatcher.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "MyOddWeb.DirectoryWatcher >= 0.1.9"
+    ]
   },
   "packageFolders": {
     "/home/rat/.nuget/packages/": {}
@@ -44,6 +91,12 @@
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
+        "dependencies": {
+          "MyOddWeb.DirectoryWatcher": {
+            "target": "Package",
+            "version": "[0.1.9, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

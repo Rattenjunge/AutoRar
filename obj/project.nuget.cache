@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5DBZEEg4VNtJDVfFR303AEPsNXvC2gB9NfY34lUP4XC2WQ78ks7OyfiZXaYrUob4Fb3DkIwKl4pUixLVLtvnSg==",
+  "dgSpecHash": "vlUEOD02hfj9Fl7o9b6IIXATadEQxUQwkOuzBOMh2BqP0pwZJxGwh1TrQaDkUFAlh5Dn+cmY5nYQeOdC1W3onw==",
   "success": true,
   "projectFilePath": "/home/rat/Desktop/AutoRar/AutoRar.csproj",
   "expectedPackageFiles": [
+    "/home/rat/.nuget/packages/myoddweb.directorywatcher/0.1.9/myoddweb.directorywatcher.0.1.9.nupkg.sha512",
     "/home/rat/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/7.0.8/microsoft.netcore.app.runtime.linux-x64.7.0.8.nupkg.sha512",
     "/home/rat/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/7.0.8/microsoft.aspnetcore.app.runtime.linux-x64.7.0.8.nupkg.sha512",
     "/home/rat/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.8/microsoft.netcore.app.host.linux-x64.7.0.8.nupkg.sha512"

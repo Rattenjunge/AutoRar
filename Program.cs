@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using myoddweb.directorywatcher;
+using myoddweb.directorywatcher.interfaces;
 
 namespace AutoRar
 {
@@ -8,7 +10,7 @@ namespace AutoRar
         {
             string _outputFolder = "Output";
             string _inputFolder = "Input";
-            string _password = args[0];
+            string _password = "test";
 
             string _path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
@@ -21,10 +23,8 @@ namespace AutoRar
                 return;
             }
 
-            FileSystemWatcher watcher = new FileSystemWatcher()
-            {
-                Path = _inputFolder
-            };
+            Watcher watcher = new();
+            watcher.Add(new Request(_inputFolder, false));
 
             int rarIndex;
 
@@ -52,12 +52,12 @@ namespace AutoRar
             }
 
             // Add event handlers for all events you want to handle
-            watcher.Created += new FileSystemEventHandler((s, e) =>
+            watcher.OnAddedAsync += async (s, e) =>
              OnChanged(s, e, _inputFolder, _outputFolder,
-             _password, ref rarIndex));
+             _password, ref rarIndex);
 
             // Activate the watcher
-            watcher.EnableRaisingEvents = true;
+            watcher.Start();
 
             Console.WriteLine("AutoRar running. Listening for new files.");
             while (true)
@@ -66,11 +66,10 @@ namespace AutoRar
             }
         }
 
-        private static void OnChanged(object sender, FileSystemEventArgs e, string InputFolder, string OutputFolder, string _password, ref int RarIndex)
+        private static void OnChanged(IFileSystemEvent sender, CancellationToken e, string InputFolder, string OutputFolder, string _password, ref int RarIndex)
         {
             string compressedFileName = RarIndex + ".rar";
-            FileInfo fileInfo = new(e.FullPath);
-
+            FileInfo fileInfo = new(sender.FullName);
 
             //ignore rars and directories
             
@@ -79,8 +78,8 @@ namespace AutoRar
                 return;
             }
 
-            string newFileName = String.Concat(e.Name.Where(c => !Char.IsWhiteSpace(c)));
-            File.Move(InputFolder + "/" + e.Name, InputFolder + "/" + newFileName);
+            string newFileName = String.Concat(sender.Name.Where(c => !Char.IsWhiteSpace(c)));
+            File.Move(InputFolder + "/" + sender.Name, InputFolder + "/" + newFileName);
 
             ProcessStartInfo startInfo = new("rar")
             {
@@ -98,11 +97,11 @@ namespace AutoRar
             RarIndex++;
 
             process.EnableRaisingEvents = true;
-            process.Exited += (s, e) => MoveFiles(s, e, InputFolder, OutputFolder, compressedFileName);
+            process.Exited += (s, e) => MoveFiles(InputFolder, OutputFolder, compressedFileName);
 
         }
 
-        private static void MoveFiles(Object sender, EventArgs e, string InputFolder, string OutputFolder, string compressedFileName)
+        private static void MoveFiles(string InputFolder, string OutputFolder, string compressedFileName)
         {
             if (File.Exists(InputFolder + "/" + compressedFileName) && !File.Exists(OutputFolder + "/" + compressedFileName))
             {
