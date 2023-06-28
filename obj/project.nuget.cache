@@ -1,29 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "al40MMiybQy1k18k/76ABrTuAaournIyWbf/LmZsriMHmSHeshKBOXQWnE/QghQekpCT4oYu8HzhQn0KWnhY0w==",
+  "dgSpecHash": "U1QtYQbfTAPSci2s5IS3OyeQe2SFBk+f+sEQXHCh9NvVVHXdDrWV/ZksKouEr0cX35WE9bIvsEkQaFmrpfT9zQ==",
   "success": true,
   "projectFilePath": "/home/rat/Desktop/AutoRar/AutoRar.csproj",
   "expectedPackageFiles": [
-    "/home/rat/.nuget/packages/swatcher/1.1.0.1/swatcher.1.1.0.1.nupkg.sha512",
-    "/home/rat/.nuget/packages/system.reactive/6.0.0/system.reactive.6.0.0.nupkg.sha512",
-    "/home/rat/.nuget/packages/system.reactive.core/6.0.0/system.reactive.core.6.0.0.nupkg.sha512",
-    "/home/rat/.nuget/packages/system.reactive.interfaces/6.0.0/system.reactive.interfaces.6.0.0.nupkg.sha512",
-    "/home/rat/.nuget/packages/system.reactive.linq/6.0.0/system.reactive.linq.6.0.0.nupkg.sha512",
-    "/home/rat/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "/home/rat/.nuget/packages/g2development.filewatcher/2.0.1.3/g2development.filewatcher.2.0.1.3.nupkg.sha512",
+    "/home/rat/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/7.0.8/microsoft.netcore.app.runtime.linux-x64.7.0.8.nupkg.sha512",
     "/home/rat/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/7.0.8/microsoft.aspnetcore.app.runtime.linux-x64.7.0.8.nupkg.sha512",
-    "/home/rat/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.8/microsoft.netcore.app.host.linux-x64.7.0.8.nupkg.sha512",
-    "/home/rat/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/7.0.8/microsoft.netcore.app.runtime.linux-x64.7.0.8.nupkg.sha512"
+    "/home/rat/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.8/microsoft.netcore.app.host.linux-x64.7.0.8.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Swatcher 1.1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Swatcher",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

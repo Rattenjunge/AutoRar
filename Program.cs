@@ -1,7 +1,5 @@
 ﻿using System.Diagnostics;
-using BraveLantern.Swatcher;
-using BraveLantern.Swatcher.Args;
-using BraveLantern.Swatcher.Config;
+using G2Development.FileWatcher;
 
 namespace AutoRar
 {
@@ -24,11 +22,10 @@ namespace AutoRar
                 return;
             }
 
-            SwatcherConfig config = new(_inputFolder, WatcherChangeTypes.Created,
-            SwatcherItemTypes.File, SwatcherNotificationTypes.FileName,
-             null, false, true);
-
-            Swatcher watcher = new(config);
+            FileWatcher watcher = new()
+            {
+                Path = _inputFolder
+            };
 
             int rarIndex;
 
@@ -56,12 +53,12 @@ namespace AutoRar
             }
 
             // Add event handlers for all events you want to handle
-            watcher.ItemCreated += new((s, e) =>
+            watcher.Created += new((s, e) =>
              OnChanged(e, _inputFolder, _outputFolder,
              _password, ref rarIndex));
 
             // Activate the watcher
-            watcher.Start();
+            watcher.EnableRaisingEvents = true;
 
             Console.WriteLine("AutoRar running. Listening for new files.");
             while (true)
@@ -70,7 +67,7 @@ namespace AutoRar
             }
         }
 
-        private static void OnChanged(SwatcherCreatedEventArgs e, string InputFolder, string OutputFolder, string _password, ref int RarIndex)
+        private static void OnChanged(FileSystemEventArgs e, string InputFolder, string OutputFolder, string _password, ref int RarIndex)
         {
             string compressedFileName = RarIndex + ".rar";
             FileInfo fileInfo = new(e.FullPath);

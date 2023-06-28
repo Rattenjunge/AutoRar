@@ -2,340 +2,45 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "Swatcher/1.1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "3.1.1"
-        },
-        "compile": {
-          "lib/net45/BraveLantern.Swatcher.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/BraveLantern.Swatcher.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Reactive/6.0.0": {
+      "G2Development.FileWatcher/2.0.1.3": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp3.1/FileWatcher.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Reactive.Core/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "6.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Reactive.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Reactive.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Reactive.Interfaces/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "6.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Reactive.Interfaces.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Reactive.Interfaces.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Reactive.Linq/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "6.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Reactive.Linq.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Reactive.Linq.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
+          "lib/netcoreapp3.1/FileWatcher.dll": {}
         }
       }
     },
     "net7.0/linux-x64": {
-      "Swatcher/1.1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "3.1.1"
-        },
-        "compile": {
-          "lib/net45/BraveLantern.Swatcher.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/BraveLantern.Swatcher.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Reactive/6.0.0": {
+      "G2Development.FileWatcher/2.0.1.3": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp3.1/FileWatcher.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Reactive.Core/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "6.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Reactive.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Reactive.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Reactive.Interfaces/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "6.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Reactive.Interfaces.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Reactive.Interfaces.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Reactive.Linq/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "6.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Reactive.Linq.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Reactive.Linq.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
+          "lib/netcoreapp3.1/FileWatcher.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Swatcher/1.1.0.1": {
-      "sha512": "iSdV1Wa3F941hMP219oEFMqmWFKNrDufiYAh3/wsipV28hwes63lB2AWOCEQymh4DGm2PwKNFGHidNY3iSvnxA==",
+    "G2Development.FileWatcher/2.0.1.3": {
+      "sha512": "2OD6YxXSCpn5YjjlF3r+6zk1M98aEkvorWFFBK1V27ZgjwXkh39K17iqngd5Z3/hcZVuMvLzf16WMmYl+gNrAw==",
       "type": "package",
-      "path": "swatcher/1.1.0.1",
+      "path": "g2development.filewatcher/2.0.1.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net45/BraveLantern.Swatcher.dll",
-        "lib/net45/BraveLantern.Swatcher.xml",
-        "swatcher.1.1.0.1.nupkg.sha512",
-        "swatcher.nuspec"
-      ]
-    },
-    "System.Reactive/6.0.0": {
-      "sha512": "31kfaW4ZupZzPsI5PVe77VhnvFF55qgma7KZr/E0iFTs6fmdhhG8j0mgEx620iLTey1EynOkEfnyTjtNEpJzGw==",
-      "type": "package",
-      "path": "system.reactive/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/net6.0-windows10.0.19041/_._",
-        "build/net6.0/_._",
-        "buildTransitive/net6.0-windows10.0.19041/_._",
-        "buildTransitive/net6.0/_._",
-        "icon.png",
-        "lib/net472/System.Reactive.dll",
-        "lib/net472/System.Reactive.xml",
-        "lib/net6.0-windows10.0.19041/System.Reactive.dll",
-        "lib/net6.0-windows10.0.19041/System.Reactive.xml",
-        "lib/net6.0/System.Reactive.dll",
-        "lib/net6.0/System.Reactive.xml",
-        "lib/netstandard2.0/System.Reactive.dll",
-        "lib/netstandard2.0/System.Reactive.xml",
-        "lib/uap10.0.18362/System.Reactive.dll",
-        "lib/uap10.0.18362/System.Reactive.pri",
-        "lib/uap10.0.18362/System.Reactive.xml",
-        "readme.md",
-        "system.reactive.6.0.0.nupkg.sha512",
-        "system.reactive.nuspec"
-      ]
-    },
-    "System.Reactive.Core/6.0.0": {
-      "sha512": "UBiaW+0Aq+Q6U71JwnmUWcxe+09lWKFqMt9BFALoPJz/qdHt3HdK4j2c7FdriEwwEi2Yww/7Yre0SgQk5pIbIg==",
-      "type": "package",
-      "path": "system.reactive.core/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/net472/System.Reactive.Core.dll",
-        "lib/net472/System.Reactive.Core.xml",
-        "lib/netstandard2.0/System.Reactive.Core.dll",
-        "lib/netstandard2.0/System.Reactive.Core.xml",
-        "lib/uap10.0.18362/System.Reactive.Core.dll",
-        "lib/uap10.0.18362/System.Reactive.Core.pri",
-        "lib/uap10.0.18362/System.Reactive.Core.xml",
-        "readme.md",
-        "system.reactive.core.6.0.0.nupkg.sha512",
-        "system.reactive.core.nuspec"
-      ]
-    },
-    "System.Reactive.Interfaces/6.0.0": {
-      "sha512": "VGf0pLVzkjSLJpLrzqVYlwtbm8LWGGf11aObe++bbLyR/g6iKfAndivys1RqkyWqI0TU5oj/KdsGK6iocdRJ7w==",
-      "type": "package",
-      "path": "system.reactive.interfaces/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/net472/System.Reactive.Interfaces.dll",
-        "lib/net472/System.Reactive.Interfaces.xml",
-        "lib/netstandard2.0/System.Reactive.Interfaces.dll",
-        "lib/netstandard2.0/System.Reactive.Interfaces.xml",
-        "lib/uap10.0.18362/System.Reactive.Interfaces.dll",
-        "lib/uap10.0.18362/System.Reactive.Interfaces.pri",
-        "lib/uap10.0.18362/System.Reactive.Interfaces.xml",
-        "readme.md",
-        "system.reactive.interfaces.6.0.0.nupkg.sha512",
-        "system.reactive.interfaces.nuspec"
-      ]
-    },
-    "System.Reactive.Linq/6.0.0": {
-      "sha512": "pXI6jCnFDnkFjwS3Er21PbhPco955KC+M6UzSPv/v/UycNHjYRGazYQqLNcqn9P5kgTMVd4bq+9GbhZywVQikQ==",
-      "type": "package",
-      "path": "system.reactive.linq/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/net472/System.Reactive.Linq.dll",
-        "lib/net472/System.Reactive.Linq.xml",
-        "lib/netstandard2.0/System.Reactive.Linq.dll",
-        "lib/netstandard2.0/System.Reactive.Linq.xml",
-        "lib/uap10.0.18362/System.Reactive.Linq.dll",
-        "lib/uap10.0.18362/System.Reactive.Linq.pri",
-        "lib/uap10.0.18362/System.Reactive.Linq.xml",
-        "readme.md",
-        "system.reactive.linq.6.0.0.nupkg.sha512",
-        "system.reactive.linq.nuspec"
-      ]
-    },
-    "System.Threading.Tasks.Extensions/4.5.4": {
-      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
-      "type": "package",
-      "path": "system.threading.tasks.extensions/4.5.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.Threading.Tasks.Extensions.dll",
-        "lib/net461/System.Threading.Tasks.Extensions.xml",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
-        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/netcoreapp2.1/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-        "system.threading.tasks.extensions.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "g2development.filewatcher.2.0.1.3.nupkg.sha512",
+        "g2development.filewatcher.nuspec",
+        "lib/netcoreapp3.1/FileWatcher.dll"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Swatcher >= 1.1.0.1",
-      "System.Reactive.Core >= 6.0.0",
-      "System.Reactive.Interfaces >= 6.0.0",
-      "System.Reactive.Linq >= 6.0.0"
+      "G2Development.FileWatcher >= 2.0.1.3"
     ]
   },
   "packageFolders": {
@@ -375,21 +80,9 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "Swatcher": {
+          "G2Development.FileWatcher": {
             "target": "Package",
-            "version": "[1.1.0.1, )"
-          },
-          "System.Reactive.Core": {
-            "target": "Package",
-            "version": "[6.0.0, )"
-          },
-          "System.Reactive.Interfaces": {
-            "target": "Package",
-            "version": "[6.0.0, )"
-          },
-          "System.Reactive.Linq": {
-            "target": "Package",
-            "version": "[6.0.0, )"
+            "version": "[2.0.1.3, )"
           }
         },
         "imports": [
@@ -430,17 +123,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Swatcher 1.1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Swatcher",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  }
 }
